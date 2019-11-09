@@ -1,0 +1,190 @@
+/* splitting screen into two segments and setting global bgcolor etc*/
+
+#left {
+	position: fixed;
+	min-width: 20%;
+	min-height: 100%;
+	background-color: #5ED4D6;
+	text-align: center;
+}
+
+#right {
+	position: fixed;
+	left: 20%;
+	min-height: 100%;
+	min-width: 80%;
+}
+
+body {
+	background-color: #fff;
+}
+
+/* setting illustration and logo properties */
+
+#illustrations {
+	width: 50%;
+}
+
+#logo {
+	margin-top: 20%;
+	margin-bottom: 20%;
+}
+
+/* tag-line formatting */
+
+.tagline {
+	font-size: 1.5em;
+	font-family: 'Open Sans', sans-serif;
+	color: #5ED4D6;
+	background: #fff;
+	padding: 2%;
+	border-radius: 55px;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 2.5%;
+	box-shadow: 0px 2px 35px #5ED4D6;
+}
+
+/* footer formatting */
+
+.copyright {
+	color: #a9a9a9;
+	position: absolute;
+	bottom: 0;
+}
+
+footer {
+	padding: 5%;
+	bottom: 0;
+	position: fixed;
+	text-decoration: solid;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+/* setting leaderboard properties and formatting*/
+
+#leaderboard {
+	margin: auto;
+	color: white;
+	background: #5ED4D6;
+	border-radius: 25px;
+	padding: 3%;
+}
+
+th,
+td {
+	margin: 50%;
+	padding: 0.5em 5em;
+	text-align: center;
+	border-width: @horizontal-border-width 0;
+	border-color: #5ED4D6;
+	border-style: solid;
+}
+
+th {
+	border-bottom-width: -border-width;
+	text-decoration: underline;
+}
+
+/* instructions page grid and formatting */
+
+.ins-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding-top: 5%;
+}
+
+#ins-txt {
+	font-size: 1.25em;
+	font-family: 'Open Sans', sans-serif;
+	color: #5ED4D6;
+	background: #fff;
+	margin: 10%;
+	padding: 3%;
+	border-radius: 55px;
+	box-shadow: 0px 2px 35px #5ED4D6;
+	transition: 0.5s;
+}
+
+#ins-txt:hover {
+	transform: scale(1.2);
+	transition: ease 0.5s;
+}
+
+/* formatting navbar buttons */
+
+.pages > #links {
+	text-decoration: none;
+	font-size: 1.8em;
+	font-family: 'Open Sans', sans-serif;
+	color: aliceblue;
+	margin: 0.3em;
+	margin-bottom: 2em;
+	display: block;
+	border-radius: 50em;
+	border: solid transparent 3px;
+	transition: 0.5s;
+}
+
+.pages > #links:hover {
+	background: rgba(44, 112, 196, 0.3);
+	border-radius: 50em;
+	transition: 0.5s;
+}
+
+.selected {
+	background-color: #2BA1A3;
+}
+
+/* login page formatting, styling and animations */
+
+.login-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	justify-self: center;
+	grid-gap: 1%;
+}
+
+form {
+	text-align: left;
+	margin: 15%;
+	padding: 5%;
+	border-radius: 55px;
+	box-shadow: 0px 2px 35px #5ED4D6;
+	margin-top: 200px;
+	opacity: 0.3;
+	transition: ease 0.5s;
+}
+
+form:focus-within {
+	opacity: 1;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #5ED4D6;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	border-radius: 35px;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
