@@ -57,9 +57,13 @@ function outputBannerNavigation($pageName)
 	echo '</header>';
 }
 
-//output closing body tag and closing html tag
+//output footer and closing body and html tag
 function outputFooter()
 {
+	echo ' <!--copyright notice-->';
+	echo '<footer>';
+	echo '   <span class="copyright">COPYRIGHT © 2019 Sequenz Inc, All rights reserved.</span>';
+	echo '</footer>';
 	echo '</body>';
 	echo '</html>';
 }

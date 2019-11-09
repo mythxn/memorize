@@ -14,11 +14,6 @@ outputHeader("Home"); //output navbar and site logo
             remember!
         </div>
     </article>
-
-    <!--copyright notice-->
-    <footer>
-        <span class="copyright">COPYRIGHT © 2019 Sequenz Inc, All rights reserved.</span>
-    </footer>
 </div>
 
 <!--left navbar-->
