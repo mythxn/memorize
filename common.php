@@ -1,22 +1,24 @@
 <?php
 
 //output page header and open body tag
-function outputHeader($title) {
+function outputHeader($title)
+{
 	echo '<!DOCTYPE html>';
-  echo '<html>';
-  echo '<head>';
-  echo '<title>' . $title . '</title>';
-  echo '<!--linking external style sheets and fonts -->';
-  echo '<link rel="stylesheet" type="text/css" href="stylesheets/main.css">';
+	echo '<html>';
+	echo '<head>';
+	echo '<title>' . $title . '</title>';
+	echo '<!--linking external style sheets and fonts -->';
+	echo '<link rel="stylesheet" type="text/css" href="stylesheets/main.css">';
 	echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">';
 	echo '<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">';
-	
-  echo '</head>';
+
+	echo '</head>';
 	echo '<body>';
 }
 
 //output navigation-bar and make sure the selected page is highlighted in page
-function outputBannerNavigation($pageName) {
+function outputBannerNavigation($pageName)
+{
 	//start header with page logo
 	echo '<header>';
 	echo '<svg id="logo" viewbox="0 0 100 20">';
@@ -34,29 +36,30 @@ function outputBannerNavigation($pageName) {
 	echo '	<text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="1">SEQUENZ</text>';
 	echo '	<text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.5">SEQUENZ</text>';
 	echo '</svg>';
-	
+
 	//nav-bar pages
 	echo '<nav class="pages">';
 	//array of pages to link to
-	$linkNames = array("Home","Leaderboard","My Account","Play Game","About");
-	$linkAddresses = array("index.php", "leaderboard.php","login.php","game.php", "about.php");
-    
+	$linkNames = array("Home", "Leaderboard", "My Account", "Play Game", "About");
+	$linkAddresses = array("index.php", "leaderboard.php", "login.php", "game.php", "about.php");
+
 	//output navigation
-	for($x = 0; $x < count($linkNames); $x++) {
+	for ($x = 0; $x < count($linkNames); $x++) {
 		echo '<a id="links"';
-		if($linkNames[$x] == $pageName){
+		if ($linkNames[$x] == $pageName) {
 			echo 'class="selected" ';
 		}
-		echo 'href='. $linkAddresses[$x] . '>' . $linkNames[$x] . '</a>';
+		echo 'href=' . $linkAddresses[$x] . '>' . $linkNames[$x] . '</a>';
 	}
-	
+
 	//close navbar/header and prepare for body
 	echo '</nav>';
 	echo '</header>';
 }
 
 //output closing body tag and closing html tag
-function outputFooter() {
-    echo '</body>';
-    echo '</html>';
+function outputFooter()
+{
+	echo '</body>';
+	echo '</html>';
 }
