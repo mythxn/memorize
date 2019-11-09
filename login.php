@@ -9,22 +9,27 @@ outputHeader("Home"); //output navbar and site logo
     <div class="login-container">
         <!--login box-->
         <form class="login" action="/action_page.php" method="post">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="uname"><b>Username</b>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            </label>
+            <label for="psw"><b>Password</b>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </label>
             <button type="submit">Login</button>
         </form>
 
         <!--register box-->
         <form class="register" action="/action_page.php" method="post">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <label for="uname"><b>Email</b></label>
-            <input type="email" placeholder="Enter email" name="email" required>
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-            <button type="submit">Register</button>
+            <label for="uname"><b>Username</b>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            </label>
+            <label for="email"><b>Email</b>
+                <input type="email" placeholder="Enter Email" name="email" required>
+            </label>
+            <label for="psw"><b>Password</b>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </label>
+            <button type="submit">Login</button>
         </form>
     </div>
 </div>

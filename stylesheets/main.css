@@ -42,7 +42,7 @@ body {
 	margin-left: 15%;
 	margin-right: 15%;
 	margin-top: 2.5%;
-	box-shadow: 0px 2px 35px #5ED4D6;
+	box-shadow: 0 2px 35px #5ED4D6;
 }
 
 /* footer formatting */
@@ -78,13 +78,10 @@ td {
 	margin: 50%;
 	padding: 0.5em 5em;
 	text-align: center;
-	border-width: @horizontal-border-width 0;
-	border-color: #5ED4D6;
-	border-style: solid;
+	border: 0 solid #5ED4D6;
 }
 
 th {
-	border-bottom-width: -border-width;
 	text-decoration: underline;
 }
 
@@ -104,7 +101,7 @@ th {
 	margin: 10%;
 	padding: 3%;
 	border-radius: 55px;
-	box-shadow: 0px 2px 35px #5ED4D6;
+	box-shadow: 0 2px 35px #5ED4D6;
 	transition: 0.5s;
 }
 
@@ -120,8 +117,7 @@ th {
 	font-size: 1.8em;
 	font-family: 'Open Sans', sans-serif;
 	color: aliceblue;
-	margin: 0.3em;
-	margin-bottom: 2em;
+	margin: 0.3em 0.3em 2em;
 	display: block;
 	border-radius: 50em;
 	border: solid transparent 3px;
@@ -150,11 +146,10 @@ th {
 
 form {
 	text-align: left;
-	margin: 15%;
 	padding: 5%;
 	border-radius: 55px;
-	box-shadow: 0px 2px 35px #5ED4D6;
-	margin-top: 200px;
+	box-shadow: 0 2px 35px #5ED4D6;
+	margin: 200px 15% 15%;
 	opacity: 0.3;
 	transition: ease 0.5s;
 }
