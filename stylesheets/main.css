@@ -102,11 +102,14 @@ th {
 	padding: 3%;
 	border-radius: 55px;
 	box-shadow: 0 2px 35px #5ED4D6;
+	-webkit-transition: 0.5s;
 	transition: 0.5s;
 }
 
 #ins-txt:hover {
+	-webkit-transform: scale(1.2);
 	transform: scale(1.2);
+	-webkit-transition: ease 0.5s;
 	transition: ease 0.5s;
 }
 
@@ -121,12 +124,14 @@ th {
 	display: block;
 	border-radius: 50em;
 	border: solid transparent 3px;
+	-webkit-transition: 0.5s;
 	transition: 0.5s;
 }
 
 .pages > #links:hover {
 	background: rgba(44, 112, 196, 0.3);
 	border-radius: 50em;
+	-webkit-transition: 0.5s;
 	transition: 0.5s;
 }
 
@@ -151,6 +156,7 @@ form {
 	box-shadow: 0 2px 35px #5ED4D6;
 	margin: 200px 15% 15%;
 	opacity: 0.3;
+	-webkit-transition: ease 0.5s;
 	transition: ease 0.5s;
 }
 
@@ -182,4 +188,3 @@ button {
 button:hover {
 	opacity: 0.8;
 }
-
