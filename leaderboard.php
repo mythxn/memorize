@@ -1,6 +1,6 @@
 <?php
 include('common.php'); //include the php functions
-outputHeader("Home"); //output navbar and site logo
+outputHeader("Leaderboard"); //output navbar and site logo
 ?>
 
 <!--right div/page contents-->

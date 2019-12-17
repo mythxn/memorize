@@ -33,8 +33,8 @@ function outputBannerNavigation($pageName)
 	echo '			</path>';
 	echo '		</pattern>';
 	echo '	</defs>';
-	echo '	<text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="1">SEQUENZ</text>';
-	echo '	<text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.5">SEQUENZ</text>';
+	echo '	<text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="1">MEMORIZE</text>';
+	echo '	<text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.5">MEMORIZE</text>';
 	echo '</svg>';
 
 	//nav-bar pages

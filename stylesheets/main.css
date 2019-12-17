@@ -188,3 +188,54 @@ button {
 button:hover {
 	opacity: 0.8;
 }
+
+.difficulty-pill {
+	font-family: 'Open Sans', sans-serif;
+	color: #5ED4D6;
+	background: #fff;
+	padding: 5%;
+	cursor: pointer;
+	margin: 10%;
+	border-radius: 20px;
+	box-shadow: 0 2px 25px #5ED4D6;
+}
+
+.difficulty-pill:hover {
+	background: #5ED4D6;
+	color: #fff;
+}
+
+.difficulty-sel {
+	display: grid;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas: ". easy . hard .";
+}
+
+.game {
+	display: grid;
+	align-items: center;
+}
+
+.game-box {
+	font-family: 'Open Sans', sans-serif;
+	height: 60vh;
+	width: 75%;
+	border-radius: 30px;
+	box-shadow: 0 2px 25px #5ED4D6;
+	color: #5ED4D6;
+	background: #fff;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	align-items: center;
+	grid-template-areas: "score" "word" "userinput";
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.word {
+	font-size: 5rem;
+}
+
+.score {
+	font-size: 2rem;
+}
