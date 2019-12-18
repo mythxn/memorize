@@ -52,6 +52,24 @@ async function checkAns() {
         wordDisplay.innerHTML = "Game Over!";
         wordDisplay.style.color = 'palevioletred';
         wordInput.value = "";
+
+        // Saving Score
+        for (let i = 0, len = localStorage.length; i < len; i++) {
+            let pointArray = {};
+            let points = score;
+
+            let key = localStorage.key(i);
+            let value = localStorage[key];
+            pointArray.points = score;
+            pointArray.username = localStorage['loggedInUsrUsername'];
+            let abc = JSON.parse(localStorage.getItem(key));
+            pointArray.password = abc.password;
+
+            localStorage[pointArray.username] = JSON.stringify(pointArray);
+
+            localStorage.setItem("points", points);
+        }
+
     }
 }
 
@@ -107,7 +125,6 @@ function login() {
             localStorage.loggedInUsrUsername = usrObj.username;
             window.location.href = 'index.php';
             sessionStorage["loggedIn"] = "True";
-            return;
         } else {
             alert("Please check your credentials.");
         }

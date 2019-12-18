@@ -12,30 +12,35 @@ outputHeader("Leaderboard"); //output navbar and site logo
         <table id="leaderboard">
             <tbody>
             <tr>
-                <th>Rank</th>
                 <th>Username</th>
                 <th>Points</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>lesterj_11</td>
-                <td>420</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>johnwick</td>
-                <td>360</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>poodpai</td>
-                <td>69</td>
             </tr>
             </tbody>
         </table>
     </article>
 
 </div>
+
+<script>
+    window.onload = function rankings() {
+        let table = document.getElementById("leaderboard");
+
+        for (let i = 0, len = localStorage.length; i < len; i++) {
+            let obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
+
+            let key = localStorage.key(i);
+            let value = localStorage[key];
+
+            let row = table.insertRow(1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            if (obj.username !== undefined) {
+                cell1.innerHTML = obj.username;
+                cell2.innerHTML = obj.points;
+            }
+        }
+    };
+</script>
 
 <!--left navbar-->
 <div id="left">
