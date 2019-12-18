@@ -232,6 +232,15 @@ button:hover {
 	margin-right: auto;
 }
 
+.logout-pill {
+	border-radius: 30px;
+	box-shadow: 0 2px 25px #5ED4D6;
+	color: #5ED4D6;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .word {
 	font-size: 5rem;
 }

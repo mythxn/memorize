@@ -62,7 +62,7 @@ function outputFooter()
 {
 	echo ' <!--copyright notice-->';
 	echo '<footer>';
-	echo '   <span class="copyright">COPYRIGHT © 2019 Sequenz Inc, All rights reserved.</span>';
+	echo '   <span class="copyright">COPYRIGHT © 2019 Memorize Inc, All rights reserved.</span>';
 	echo '</footer>';
 	echo '</body>';
 	echo '</html>';

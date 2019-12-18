@@ -1,4 +1,4 @@
-let word_list = ['photosynthesis', 'pronunciation', 'handkerchief', 'iogorrhea', 'chiaroscurist', 'pochemuchka', 'spaghetti', 'gobbledegook'];
+let word_list = ['photosynthesis', 'pronunciation', 'handkerchief', 'iogorrhea', 'chiaroscurist', 'pochemuchka', 'spaghetti', 'gobbledegook', 'voluntary', 'expressive', 'emotional', 'schlerenchyma', "chlorophyl"];
 let delay = 0;
 let correctWord = "";
 let wordDisplay = document.getElementById("word");
@@ -68,3 +68,48 @@ function showText(string) {
     })();
 }
 
+function storeUser() {
+    let usrObject = {};
+    usrObject.username = document.getElementById("unamesignup").value;
+    usrObject.email = document.getElementById("emailsignup").value;
+    usrObject.password = document.getElementById("pswsignup").value;
+
+    document.getElementById("unamesignup").value = "";
+    document.getElementById("emailsignup").value = "";
+    document.getElementById("pswsignup").value = "";
+
+    localStorage[usrObject.username] = JSON.stringify(usrObject);
+}
+
+window.onload = function checkLogin() {
+    if (sessionStorage["loggedIn"] === 'True') {
+        document.querySelector(".login-container").style.display = 'none';
+    } else {
+        document.querySelector(".login-container").style.display = 'grid';
+    }
+};
+
+function logout() {
+    sessionStorage["loggedIn"] = "False";
+    document.querySelector(".login-container").style.display = 'grid';
+    localStorage.loggedInUsrUsername = undefined;
+}
+
+function login() {
+    let username = document.getElementById("unamesignin").value;
+    if (localStorage[username] === undefined) {
+        alert("Please create an account.");
+    } else {
+        let usrObj = JSON.parse(localStorage[username]);
+        let password = document.getElementById("pswsignin").value;
+        if (password === usrObj.password) {
+            alert("You are now Signed In.");
+            localStorage.loggedInUsrUsername = usrObj.username;
+            window.location.href = 'index.php';
+            sessionStorage["loggedIn"] = "True";
+            return;
+        } else {
+            alert("Please check your credentials.");
+        }
+    }
+}

@@ -4,35 +4,50 @@ outputHeader("Login"); //output navbar and site logo
 ?>
 
 <!--right div/page contents-->
-<div class="w3-container w3-center w3-animate-opacity w3-animate-right" id="right">
+<div class="w3-container w3-center w3-animate-opacity w3-animate-right" id="right"">
 
-    <div class="login-container">
-        <!--login box-->
-        <form class="login" action="/action_page.php" method="post">
-            <label for="uname"><b>Username</b>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+<div class="login-container">
+    <!--login box-->
+    <div>
+        <form action="login.php" class="login" onsubmit="return false">
+            <label for="unamesignin"><b>Username</b>
+                <input type="text" placeholder="Enter Username" id="unamesignin" required>
             </label>
-            <label for="psw"><b>Password</b>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="pswsignin"><b>Password</b>
+                <input type="password" placeholder="Enter Password" id="pswsignin" required>
             </label>
-            <button type="submit">Login</button>
+            <button type="submit" onclick="login()">Login</button>
         </form>
+    </div>
 
-        <!--register box-->
-        <form class="register" action="/action_page.php" method="post">
-            <label for="uname"><b>Username</b>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+    <!--register box-->
+    <div onsubmit="return false">
+        <form class="register">
+            <label for="unamesignup"><b>Username</b>
+                <input type="text" placeholder="Enter Username" id="unamesignup" required>
             </label>
-            <label for="email"><b>Email</b>
-                <input type="email" placeholder="Enter Email" name="email" required>
+            <label for="emailsignup"><b>Email</b>
+                <input type="email" placeholder="Enter Email" id="emailsignup" required>
             </label>
-            <label for="psw"><b>Password</b>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="pswsignup"><b>Password</b>
+                <input type="password" placeholder="Enter Password" id="pswsignup" required>
             </label>
-            <button type="submit">Login</button>
+            <button type="submit" onclick="storeUser()">Register</button>
         </form>
     </div>
 </div>
+
+<!--logout button-->
+<div class="difficulty-pill" style="width: 35%; height: 20%; margin-right: auto; margin-left: auto; cursor: pointer;"
+     onclick="logout()">
+    Click here to Logout!
+</div>
+
+
+</div>
+
+<!--js import-->
+<script src="game.js"></script>
 
 <!--left navbar-->
 <div id="left">
