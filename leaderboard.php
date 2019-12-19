@@ -31,10 +31,11 @@ outputHeader("Leaderboard"); //output navbar and site logo
             let key = localStorage.key(i);
             let value = localStorage[key];
 
-            let row = table.insertRow(1);
-            let cell1 = row.insertCell(0);
-            let cell2 = row.insertCell(1);
-            if (obj.username !== undefined) {
+            if (obj.username != undefined && obj.points != undefined) {
+                let row = table.insertRow(1);
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+
                 cell1.innerHTML = obj.username;
                 cell2.innerHTML = obj.points;
             }

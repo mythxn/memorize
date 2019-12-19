@@ -61,7 +61,7 @@ async function checkAns() {
             let key = localStorage.key(i);
             let value = localStorage[key];
             pointArray.points = score;
-            pointArray.username = localStorage['loggedInUsrUsername'];
+            pointArray.username = sessionStorage['loggedInUsrUsername'];
             let abc = JSON.parse(localStorage.getItem(key));
             pointArray.password = abc.password;
 
@@ -108,9 +108,8 @@ window.onload = function checkLogin() {
 };
 
 function logout() {
-    sessionStorage["loggedIn"] = "False";
+    sessionStorage["loggedIn"] = false;
     document.querySelector(".login-container").style.display = 'grid';
-    localStorage.loggedInUsrUsername = undefined;
 }
 
 function login() {
@@ -122,7 +121,7 @@ function login() {
         let password = document.getElementById("pswsignin").value;
         if (password === usrObj.password) {
             alert("You are now Signed In.");
-            localStorage.loggedInUsrUsername = usrObj.username;
+            sessionStorage.loggedInUsrUsername = usrObj.username;
             window.location.href = 'index.php';
             sessionStorage["loggedIn"] = "True";
         } else {
