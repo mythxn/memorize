@@ -58,16 +58,24 @@ async function checkAns() {
             let pointArray = {};
             let points = score;
 
-            let key = localStorage.key(i);
-            let value = localStorage[key];
-            pointArray.points = score;
-            pointArray.username = sessionStorage['loggedInUsrUsername'];
-            let abc = JSON.parse(localStorage.getItem(key));
-            pointArray.password = abc.password;
+            let hf = JSON.parse(localStorage[sessionStorage['loggedInUsrUsername']]);
+            if (hf.username === sessionStorage['loggedInUsrUsername'] && points > hf.points) {
+                pointArray.points = score;
+                pointArray.username = sessionStorage['loggedInUsrUsername'];
+                pointArray.password = hf.password;
 
-            localStorage[pointArray.username] = JSON.stringify(pointArray);
+                localStorage[pointArray.username] = JSON.stringify(pointArray);
+                localStorage.setItem("points", points);
+                
+            } else if (hf.points === undefined) {
+                pointArray.points = score;
+                pointArray.username = sessionStorage['loggedInUsrUsername'];
+                pointArray.password = hf.password;
 
-            localStorage.setItem("points", points);
+                localStorage[pointArray.username] = JSON.stringify(pointArray);
+
+                localStorage.setItem("points", points);
+            }
         }
 
     }
