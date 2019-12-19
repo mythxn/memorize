@@ -59,21 +59,12 @@ async function checkAns() {
             let points = score;
 
             let hf = JSON.parse(localStorage[sessionStorage['loggedInUsrUsername']]);
-            if (hf.username === sessionStorage['loggedInUsrUsername'] && points > hf.points) {
+            if ((hf.username === sessionStorage['loggedInUsrUsername'] && points > hf.points) || (hf.points === undefined)) {
                 pointArray.points = score;
                 pointArray.username = sessionStorage['loggedInUsrUsername'];
                 pointArray.password = hf.password;
 
                 localStorage[pointArray.username] = JSON.stringify(pointArray);
-                localStorage.setItem("points", points);
-                
-            } else if (hf.points === undefined) {
-                pointArray.points = score;
-                pointArray.username = sessionStorage['loggedInUsrUsername'];
-                pointArray.password = hf.password;
-
-                localStorage[pointArray.username] = JSON.stringify(pointArray);
-
                 localStorage.setItem("points", points);
             }
         }
