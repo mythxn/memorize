@@ -59,7 +59,7 @@ async function checkAns() {
             let points = score;
 
             let hf = JSON.parse(localStorage[sessionStorage['loggedInUsrUsername']]);
-            if ((hf.username === sessionStorage['loggedInUsrUsername'] && points > hf.points) || (hf.points === undefined)) {
+            if ((points > hf.points) || (hf.points === undefined)) {
                 pointArray.points = score;
                 pointArray.username = sessionStorage['loggedInUsrUsername'];
                 pointArray.password = hf.password;
