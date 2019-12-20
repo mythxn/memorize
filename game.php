@@ -38,7 +38,7 @@ outputHeader("Game"); //output navbar and site logo
 </div>
 
 <!--js import-->
-<script src="game.js"></script>
+<script src="js-code/game.js"></script>
 
 <!--page end-->
 <?php

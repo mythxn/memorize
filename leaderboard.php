@@ -3,7 +3,7 @@ include('common.php'); //include the php functions
 outputHeader("Leaderboard"); //output navbar and site logo
 ?>
 
-<script src="sorttable.js"></script>
+<script src="js-code/sorttable.js"></script>
 
 <!--right div/page contents-->
 <div class="w3-container w3-center w3-animate-opacity w3-animate-right" id="right">
