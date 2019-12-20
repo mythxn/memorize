@@ -3,17 +3,24 @@ include('common.php'); //include the php functions
 outputHeader("Leaderboard"); //output navbar and site logo
 ?>
 
+<script src="sorttable.js"></script>
+
 <!--right div/page contents-->
 <div class="w3-container w3-center w3-animate-opacity w3-animate-right" id="right">
     <article>
         <img id="illustrations" src="images/leaderboard.png" alt="a fancy list">
 
-        <!--temporary fake leaderboard-->
-        <table id="leaderboard">
+        <!--leaderboard-->
+        <table class="sortable" id="leaderboard">
+            <thead>
+            <tr>
+                <th class="sorttable_nosort">Username</th>
+                <th>Points</th>
+            </tr>
+            </thead>
             <tbody>
             <tr>
-                <th>Username</th>
-                <th>Points</th>
+
             </tr>
             </tbody>
         </table>
@@ -31,7 +38,7 @@ outputHeader("Leaderboard"); //output navbar and site logo
             let key = localStorage.key(i);
             let value = localStorage[key];
 
-            if (obj.username != undefined && obj.points != undefined) {
+            if (obj.username !== undefined && obj.points !== undefined) {
                 let row = table.insertRow(1);
                 let cell1 = row.insertCell(0);
                 let cell2 = row.insertCell(1);
@@ -40,6 +47,10 @@ outputHeader("Leaderboard"); //output navbar and site logo
                 cell2.innerHTML = obj.points;
             }
         }
+
+        // Auto-sort table on page load
+        let myTH = document.getElementsByTagName("th")[1];
+        sorttable.innerSortFunction.apply(myTH, []);
     };
 </script>
 

@@ -47,7 +47,15 @@ outputHeader("Login"); //output navbar and site logo
 </div>
 
 <!--js import-->
-<script src="game.js"></script>
+<script src="game.js">
+    window.onload = function checkLogin() {
+        if (sessionStorage["loggedIn"] === 'True') {
+            document.querySelector(".login-container").style.display = 'none';
+        } else {
+            document.querySelector(".login-container").style.display = 'grid';
+        }
+    };
+</script>
 
 <!--left navbar-->
 <div id="left">

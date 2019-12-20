@@ -1,4 +1,4 @@
-let word_list = ['photosynthesis', 'pronunciation', 'handkerchief', 'iogorrhea', 'chiaroscurist', 'pochemuchka', 'spaghetti', 'gobbledegook', 'voluntary', 'expressive', 'emotional', 'schlerenchyma', "chlorophyl"];
+let word_list = ['photosynthesis', 'pronunciation', 'handkerchief', 'iogorrhea', 'chiaroscurist', 'pochemuchka', 'spaghetti', 'gobbledegook', 'voluntary', 'expressive', 'emotional', 'schlerenchyma', "chlorophyl", "anonymous", "symphony"];
 let delay = 0;
 let correctWord = "";
 let wordDisplay = document.getElementById("word");
@@ -15,9 +15,9 @@ function startGame(level) {
 
     // Setting Difficulty
     if (level === 1) {
-        delay = 2500;
-    } else if (level === 2) {
         delay = 1500;
+    } else if (level === 2) {
+        delay = 1000;
     }
 
     // Play Game
@@ -29,13 +29,12 @@ async function gamePlay(restPeriod) {
     correctWord = word_list[Math.floor(Math.random() * word_list.length)];
 
     wordDisplay.innerHTML = "";
-    await sleep(250);
+    await sleep(50);
     showText(correctWord);
     await sleep(delay);
     wordDisplay.innerHTML = "";
-    await sleep(250);
+    await sleep(50);
     wordDisplay.innerHTML = "Write it down!";
-
 }
 
 async function checkAns() {
@@ -97,14 +96,6 @@ function storeUser() {
 
     localStorage[usrObject.username] = JSON.stringify(usrObject);
 }
-
-window.onload = function checkLogin() {
-    if (sessionStorage["loggedIn"] === 'True') {
-        document.querySelector(".login-container").style.display = 'none';
-    } else {
-        document.querySelector(".login-container").style.display = 'grid';
-    }
-};
 
 function logout() {
     sessionStorage["loggedIn"] = false;
