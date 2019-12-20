@@ -26,6 +26,7 @@ function startGame(level) {
 
 async function gamePlay(restPeriod) {
 
+    // Random word generator
     correctWord = word_list[Math.floor(Math.random() * word_list.length)];
 
     wordDisplay.innerHTML = "";
@@ -38,6 +39,7 @@ async function gamePlay(restPeriod) {
 }
 
 async function checkAns() {
+    // If correct ans, continue
     if (wordInput.value === correctWord) {
         wordDisplay.innerHTML = "Correct!";
         wordDisplay.style.color = 'lightgreen';
@@ -47,6 +49,8 @@ async function checkAns() {
         score++;
         scoreDisplay.innerText = score;
         gamePlay(delay);
+
+        // Else, game over
     } else {
         wordDisplay.innerHTML = "Game Over!";
         wordDisplay.style.color = 'palevioletred';
@@ -71,10 +75,12 @@ async function checkAns() {
     }
 }
 
+// Sleep method that mimics Thread.sleep in js
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Animates the text as if it's being typed out
 function showText(string) {
     var str = string.split("");
     var el = document.getElementById('word');
@@ -84,6 +90,8 @@ function showText(string) {
     })();
 }
 
+
+// Registration method
 function storeUser() {
     let usrObject = {};
     usrObject.username = document.getElementById("unamesignup").value;
@@ -97,11 +105,23 @@ function storeUser() {
     localStorage[usrObject.username] = JSON.stringify(usrObject);
 }
 
+
+// Logout method
 function logout() {
     sessionStorage["loggedIn"] = false;
     document.querySelector(".login-container").style.display = 'grid';
 }
 
+// Check if logged in to show logout button
+window.onload = function checkLogin() {
+    if (sessionStorage["loggedIn"] === 'True') {
+        document.querySelector(".login-container").style.display = 'none';
+    } else {
+        document.querySelector(".login-container").style.display = 'grid';
+    }
+};
+
+// Login method
 function login() {
     let username = document.getElementById("unamesignin").value;
     if (localStorage[username] === undefined) {

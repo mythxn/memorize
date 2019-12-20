@@ -40,22 +40,14 @@ outputHeader("Login"); //output navbar and site logo
 <!--logout button-->
 <div class="difficulty-pill" style="width: 35%; height: 20%; margin-right: auto; margin-left: auto; cursor: pointer;"
      onclick="logout()">
-    Click here to Logout!
+	Click here to Logout!
 </div>
 
 
 </div>
 
 <!--js import-->
-<script src="js-code/game.js">
-    window.onload = function checkLogin() {
-        if (sessionStorage["loggedIn"] === 'True') {
-            document.querySelector(".login-container").style.display = 'none';
-        } else {
-            document.querySelector(".login-container").style.display = 'grid';
-        }
-    };
-</script>
+<script src="js-code/game.js"></script>
 
 <!--left navbar-->
 <div id="left">
